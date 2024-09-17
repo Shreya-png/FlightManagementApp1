@@ -1,0 +1,35 @@
+
+<div class="user-bookings-container">
+  <label for="userId">User ID:</label>
+  <input [(ngModel)]="booking.userId" name="userId" type="text" class="form-control" required>
+  <button (click)="getBookingsByUserId()" class="btn btn-primary">My Bookings</button>
+</div>
+
+<div *ngIf="userBookings.length > 0" class="bookings-list">
+  <h3>Your Bookings:</h3>
+  <ul class="list-group">
+    <li *ngFor="let booking of userBookings; let i = index" class="list-group-item">
+      <div *ngIf="!booking.isEditing">
+        <strong>Booking ID:</strong> {{ booking.booking.bookingId }} <br>
+        <strong>Flight ID:</strong> {{ booking.booking.flightId }} <br>
+        <strong>Number of Seats:</strong> {{ booking.booking.numberOfSeats }} <br>
+        <strong>Total Price:</strong> {{ booking.booking.totalPrice | currency:'INR':'symbol' }} <br>
+        <strong>Booking Date:</strong> {{ booking.booking.bookingDate }} <br>
+        <strong>Status:</strong> {{ booking.booking.status }} <br>
+
+        <button (click)="editBooking(i)" class="btn btn-secondary btn-sm mt-2">Cancel Booking</button>
+      </div>
+
+      <div *ngIf="booking.isEditing">
+        <p>Are you sure you want to cancel this booking?</p>
+
+        <button (click)="confirmCancel(i)" class="btn btn-danger btn-sm mt-2">Confirm</button>
+        <button (click)="cancelEdit(i)" class="btn btn-secondary btn-sm mt-2">Back</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="userBookings.length === 0 && booking.userId" class="no-bookings-message">
+  <p>No bookings found for the provided User ID.</p>
+</div>

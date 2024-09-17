@@ -1,0 +1,121 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">SkyPort</a>
+  <div class="collapse navbar-collapse">
+    
+  </div>
+</nav>
+
+
+<div class="deco">
+<div class="booking-page">
+  <div class="booking-left">
+    <h2>{{ flight?.source }} → {{ flight?.destination }}</h2>
+    <div class="flight-details">
+      <p><strong>{{ flight?.departureDate | date:'fullDate' }}</strong> • Non Stop • </p>
+      <div class="flight-info">
+        <img *ngIf="flight?.flightName === 'IndiGo'" src="../../../assets/IndiGo_logo_PNG_(4).png" alt="IndiGo Logo">
+          <img *ngIf="flight?.flightName === 'Vistara'" src="../../../assets/Vistara_logo_PNG_(6).png" alt="Vistara Logo">
+          <img *ngIf="flight?.flightName === 'AirIndia'" src="../../../assets/Air_India_logo_PNG_(5).png" alt="AirIndia Logo">
+          <img *ngIf="flight?.flightName === 'SpiceJet'" src="../../../assets/SpiceJet_logo_PNG_(7).png" alt="SpiceJet Logo">
+        <p>{{ flight?.flightNumber }}</p>
+        <p><strong>{{ flight?.departureTime }}</strong> {{ flight?.source }} </p>
+        <p><strong>{{ flight?.arrivalTime }}</strong> {{ flight?.destination }} </p>
+      </div>
+      <div class="baggage-info">
+        <p><strong>Cabin Baggage:</strong> 7 Kgs (1 piece only) / Adult</p>
+        <p><strong>Check-In Baggage:</strong> 15 Kgs (1 piece only) / Adult</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="booking-right">
+    <h3>Fare Summary</h3>
+    <div class="fare-details">
+      <p><strong>Base Fare:</strong> ₹{{ flight?.fare }}</p>
+      
+      <p><strong>Total Amount:</strong> ₹{{ booking.totalPrice }}</p>
+    </div>
+    <button class="btn btn-primary" [disabled]="!isBookingValid()" [disabled]="passengers.length < 1" (click)="submitBooking()">Confirm Booking</button>
+  </div>
+
+
+  
+</div>
+</div>
+
+
+
+ <div class="passenger-part">
+<div class="passenger-details">
+  <h3>Traveller Details</h3>
+
+  <div class="passenger-form" *ngFor="let passenger of passengers; let i = index">
+    <h4>ADULT {{ i + 1 }}</h4>
+    <div *ngIf="passengerMessages.length > 0" class="passenger-messages">
+      <ul>
+        <li *ngFor="let message of passengerMessages">{{ message }}</li>
+      </ul>
+    </div>
+    
+    <div class="form-group">
+      <label for="name{{i}}">Name:</label>
+      <input [(ngModel)]="passenger.name" name="name{{i}}" type="text" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="age{{i}}">Age:</label>
+      <input [(ngModel)]="passenger.age" name="age{{i}}" type="text" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="gender{{i}}">Gender:</label>
+      <div>
+        <label>
+          <input [(ngModel)]="passenger.gender" name="gender{{i}}" type="radio" value="Male" required>
+          Male
+        </label><br>
+        <label>
+          <input [(ngModel)]="passenger.gender" name="gender{{i}}" type="radio" value="Female">
+          Female
+        </label>
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">
+      <label for="mobileNo{{i}}">Mobile No:</label>
+      <input [(ngModel)]="passenger.phone" name="mobileNo{{i}}" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="email{{i}}">Email:</label>
+      <input [(ngModel)]="passenger.email" name="email{{i}}" type="email" class="form-control">
+    </div>
+
+    <div class="form-group">
+      
+      <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-info" (click)="addPassengerDetails(i)">Add Details</button>
+        <button type="button" class="btn btn-danger" (click)="removePassenger(i)">Remove Passenger</button>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-secondary" (click)="addNewPassenger()">+ ADD NEW ADULT</button>
+</div>
+ </div>
+
+ 

@@ -1,0 +1,144 @@
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(to bottom, #97c9ff9c, #00c8ff00); 
+    /* border-bottom: 1px solid transparent;  */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: #007bff;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    
+    font-style: normal;
+  }
+  
+  .navbar-nav {
+    margin-left: auto;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 20px;
+  }
+  
+  .navbar-nav .nav-item .btn-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-item .btn-link:hover {
+    color: #ffffff;
+    background-color: #007bff;
+  }
+  
+  .navbar-nav .nav-item .btn-link:focus {
+    box-shadow: none;
+  }
+  
+.container {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .no-bookings {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+
+  /* my-bookings.component.css */
+.btn-cancel {
+    color: white;
+    background-color: #dc3545; /* Bootstrap's red color */
+    border-color: #dc3545;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+
+  /* my-bookings.component.css */
+.btn-checkin {
+    color: white;
+    background-color: #28a745; /* Bootstrap's green color */
+    border-color: #28a745;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  
+  .btn-checkin:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  
+  .btn-cancel {
+    color: white;
+    background-color: #dc3545; /* Bootstrap's red color */
+    border-color: #dc3545;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  
+  

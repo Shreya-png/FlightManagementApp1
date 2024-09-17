@@ -1,0 +1,24 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <a class="navbar-brand" routerLink="/home"><div class="small-logo">Skyport</div></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="!hideButtons">
+        <button class="nav-button" (click)="onLoginClick()">Login</button>
+      </li>
+      <li class="nav-item" *ngIf="!hideButtons">
+        <button class="nav-button" (click)="onRegisterClick()">Register</button>
+      </li>
+
+      
+      <!-- New Admin Button -->
+      <li class="nav-item" *ngIf="showLogoutButton">
+        <button class="nav-button" (click)="Logout()">Log Out</button>
+      </li>
+    </ul>
+  </div>
+</nav>

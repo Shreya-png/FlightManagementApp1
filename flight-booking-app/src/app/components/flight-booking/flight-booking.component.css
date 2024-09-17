@@ -1,0 +1,275 @@
+html{
+    background-color: #e5eef4;
+}
+
+.navbar {
+    background: linear-gradient(to bottom, #97c9ff9c, #00c8ff00); 
+    /* border-bottom: 1px solid transparent;  */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: #007bff;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    
+    font-style: normal;
+  }
+  
+  .navbar-nav {
+    margin-left: auto;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 20px;
+  }
+  
+  .navbar-nav .nav-item .btn-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-item .btn-link:hover {
+    color: #ffffff;
+    background-color: #007bff;
+  }
+  
+  .navbar-nav .nav-item .btn-link:focus {
+    box-shadow: none;
+  }
+  
+.booking-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .booking-left, .booking-right {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .booking-left {
+    width: 65%;
+    font-size: 20px;
+  }
+  
+  .booking-right {
+    width: 30%;
+    font-size: 20px;
+  }
+  
+  .flight-info img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 2px;
+  }
+  
+  .flight-info {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    justify-content: space-evenly
+  }
+  
+  .baggage-info {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .fare-details {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .fare-details p {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    /* padding: 10px; */
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+.btn-info
+  {
+    width: 3cm;
+    margin-bottom: 1.5px;
+    display: block;
+    
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btn-danger
+  {
+    width: 3cm;
+    margin-bottom: 1.5px;
+    display: block;
+    
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  
+  .passenger-details {
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .passenger-form {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  
+  .passenger-form h4 {
+    margin-top: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  
+  .btn-secondary{
+    width: 5cm;
+  }
+
+  .passenger-part
+  {
+    padding-left: 25px;
+    padding-right: 15px;
+    width: 65%;
+  }
+  .ask-login {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 65%;
+  }
+  
+  .login-box {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    /* Flexbox properties to align items on the same line */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Space between items */
+  }
+  
+  .login-box .icon {
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+  }
+  
+  .ask-login p {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0; /* Remove default margin */
+    flex: 1; /* Make <p> take remaining space */
+  }
+  
+  .log-btn {
+    width: 3cm;
+    margin-bottom: 1.5px;
+    display: block;
+    
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .userid
+  {
+    width: 7cm;
+    margin-left: 2cm;
+    padding: 20px;
+  }
+
+  .deco
+  {
+    background-color: #2d4f6d; /* Light blue background color */
+    padding: 20px;             /* Padding around the content */
+       
+    
+  }
+
+  .booking-response {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+  }
+  
+  .booking-response h3 {
+    margin-bottom: 15px;
+  }
+  
+  .passenger-messages {
+    padding: 10px;
+    background-color: #e0f7fa;
+    border: 1px solid #b2ebf2;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .passenger-messages ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .passenger-messages li {
+    margin: 5px 0;
+  }
+  

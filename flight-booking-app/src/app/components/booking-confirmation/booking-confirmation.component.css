@@ -1,0 +1,105 @@
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(to bottom, #97c9ff9c, #00c8ff00); 
+    /* border-bottom: 1px solid transparent;  */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: #007bff;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    
+    font-style: normal;
+  }
+  
+  .navbar-nav {
+    margin-left: auto;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 20px;
+  }
+  
+  .navbar-nav .nav-item .btn-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-item .btn-link:hover {
+    color: #ffffff;
+    background-color: #007bff;
+  }
+  
+  .navbar-nav .nav-item .btn-link:focus {
+    box-shadow: none;
+  }
+
+.ticket-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #3f51b5;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ticket-header, .ticket-footer {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .ticket-header h2 {
+    color: #3f51b5;
+  }
+  
+  .ticket-body {
+    margin-bottom: 20px;
+  }
+  
+  .flight-info, .passenger-info {
+    margin-bottom: 15px;
+  }
+  
+  .flight-info h3, .passenger-info h3 {
+    color: #3f51b5;
+    margin-bottom: 10px;
+  }
+  
+  .passenger-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .passenger-info li {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .passenger-info li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .ticket-footer h3 {
+    color: #3f51b5;
+  }
+  
+  .error-message {
+    text-align: center;
+    color: red;
+    margin-top: 20px;
+  }
+  

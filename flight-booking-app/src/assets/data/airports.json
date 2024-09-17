@@ -1,0 +1,13 @@
+[
+    { "name": "Bombay", "code": "BOM" },
+    { "name": "Delhi", "code": "DEL" },
+    { "name": "Bangalore", "code": "BLR" },
+    { "name": "Chennai", "code": "MAA" },
+    { "name": "Kolkata", "code": "CCU" },
+    { "name": "Hyderabad", "code": "HYD" },
+    { "name": "Ahmedabad", "code": "AMD" },
+    { "name": "Goa", "code": "GOI" },
+    { "name": "Jaipur", "code": "JAI" },
+    { "name": "Lucknow", "code": "LKO" }
+  ]
+  

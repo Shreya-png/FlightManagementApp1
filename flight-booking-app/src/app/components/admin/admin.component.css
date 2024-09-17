@@ -1,0 +1,36 @@
+.container {
+  max-width: 900px;
+}
+
+h2{
+  padding-top: 50px;
+  color: #343a40;
+}
+
+h3 {
+  padding-top: 40px;
+  color: #343a40;
+}
+
+
+.card {
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table-responsive {
+  margin-top: 30px;
+}
+
+.btn {
+  width: 100px;
+}

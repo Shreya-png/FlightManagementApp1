@@ -1,0 +1,25 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+    <app-navbar [hideButtons]="hideNavbarButtons" [showLogoutButton]="true"></app-navbar>
+
+
+    <div class="admin-dashboard-container">
+        <h1>Admin Dashboard</h1>
+      
+        <div class="dashboard-options">
+          <div class="option-card" (click)="viewFlights()">
+            <h3>View Flights</h3>
+            <p>See all the flights currently available.</p>
+          </div>
+          <div class="option-card" (click)="searchFlights()">
+            <h3>Search Flights</h3>
+            <p>Search for flights based on source and destination.</p>
+          </div>
+        </div>
+      </div>
+      

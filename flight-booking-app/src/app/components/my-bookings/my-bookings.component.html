@@ -1,0 +1,81 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">SkyPort</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button class="btn btn-link" (click)="logOutAndNavigateHome()">Log Out</button>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+    <h1>My Bookings</h1>
+  
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  
+    <div *ngIf="!errorMessage && bookings.length === 0" class="no-bookings">
+      No bookings found.
+    </div>
+  
+    <table *ngIf="!errorMessage && bookings.length > 0">
+      <thead>
+        <tr>
+          <th>Booking ID</th>
+          <th>Flight</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Total Price</th>
+          <th>Status</th>
+          <th>Passengers</th>
+          <th>CheckIn</th>
+          <th>Cancellation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.booking.bookingId }}</td>
+          <td>{{ booking.flight.flightName || 'N/A' }}</td>
+          <td>{{ booking.flight.departureDate | date:'shortDate' }}</td>
+          <td>{{ booking.flight.arrivalDate | date:'shortDate' }}</td>
+          <td>{{ booking.booking.totalPrice | currency:'INR' }}</td>
+          <td>{{ booking.booking.status }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let passenger of booking.passengers">
+                {{ passenger.name }} ({{ passenger.age }})
+              </li>
+            </ul>
+          </td>
+          <td>
+            <button class="btn btn-checkin" (click)="confirmCheckIn(booking.booking.bookingId)">CheckIn</button>
+          </td>
+          
+          
+          <td>
+
+                
+                    <button class="btn btn-cancel" (click)="confirmCancelBooking(booking.booking.bookingId)">Cancel</button>                  
+             
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  

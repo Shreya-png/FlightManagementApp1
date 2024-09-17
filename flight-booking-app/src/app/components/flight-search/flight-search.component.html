@@ -1,0 +1,100 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">SkyPort</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button class="btn btn-link" (click)="logOutAndNavigateHome()">Log Out</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-link" (click)="myBookings()">My Bookings</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="background-container">
+  <div class="overlay">
+    <div class="flight-search-container">
+      <h2>Search Flights</h2>
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+      <div class="form-group">
+        <!-- Dropdown for Source Airport -->
+        <label for="source">Source</label>
+        <select [(ngModel)]="source" (ngModelChange)="onSourceChange($event)" (ngModelChange)="errorMessage = ''" class="form-control" id="source">
+          <option *ngFor="let airport of filteredAirportsSource" [value]="airport.code">{{ airport.name }} ({{ airport.code }})</option>
+        </select>
+        
+        <!-- Dropdown for Destination Airport -->
+        <label for="destination">Destination</label>
+        <select [(ngModel)]="destination" (ngModelChange)="onDestinationChange($event)" (ngModelChange)="errorMessage = ''" class="form-control" id="destination">
+          <option *ngFor="let airport of filteredAirportsDestination" [value]="airport.code">{{ airport.name }} ({{ airport.code }})</option>
+        </select>
+
+        <input [(ngModel)]="departureDate" type="date" [attr.min]="minDate" placeholder="Departure Date" class="form-control mt-2">
+        <button (click)="searchFlights()" class="btn btn-primary mt-2">Search</button>
+      </div>
+    </div>
+
+    <!-- Flights Container -->
+    <div *ngIf="flights && flights.length > 0" class="flights-container mt-4">
+      <h3>Available Flights</h3>
+      <div *ngFor="let flight of flights" class="flight-card mb-3 p-3 border rounded shadow-sm">
+        <a [routerLink]="['/flight-booking', flight.id]" [queryParams]="{ flight: flight | json }" class="text-decoration-none">
+          <div class="d-flex align-items-center">
+            <img *ngIf="flight.flightName === 'Indigo'" src="../../../assets/IndiGo_logo_PNG_(4).png" alt="IndiGo Logo" class="flight-logo mr-3">
+            <img *ngIf="flight.flightName === 'Vistara'" src="../../../assets/Vistara_logo_PNG_(6).png" alt="Vistara Logo" class="flight-logo mr-3">
+            <img *ngIf="flight.flightName === 'AirIndia'" src="../../../assets/Air_India_logo_PNG_(5).png" alt="AirIndia Logo" class="flight-logo mr-3">
+            <img *ngIf="flight.flightName === 'SpiceJet'" src="../../../assets/SpiceJet_logo_PNG_(7).png" alt="SpiceJet Logo" class="flight-logo mr-3">
+            <div>
+              <h5 class="flight-name mb-1">{{ flight.flightName }} ({{ flight.flightNumber }})</h5>
+              <p class="mb-0">{{ flight.source }} to {{ flight.destination }}</p>
+            </div>
+            <div class="ml-auto text-right">
+              <p class="flight-time mb-0">{{ flight.departureTime }} - {{ flight.arrivalTime }}</p>
+              <p class="flight-price mt-2">{{ flight.fare | currency:'INR' }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div *ngIf="flights && flights.length === 0" class="no-results">
+      <p>No flights available for the selected route and date.</p>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- <div class="cheapest-flight-container">
+      <h2>Cheapest Flight for this Month</h2>
+      <div class="form-group">
+        <input [(ngModel)]="sourceCheapest" placeholder="Source" class="form-control">
+        <input [(ngModel)]="destinationCheapest" placeholder="Destination" class="form-control">
+        <input [(ngModel)]="monthStartDate" type="date" placeholder="Month starts" class="form-control">
+        <button (click)="searchCheapestFlight()" class="btn btn-primary">Search</button>
+      </div>
+
+      <div *ngIf="cheapestFlight" class="results-container">
+        <h3>Cheapest Flight</h3>
+        <p>{{ cheapestFlight.flightNumber }} - {{ cheapestFlight.flightName }} | {{ cheapestFlight.source }} to {{ cheapestFlight.destination }} on {{ cheapestFlight.departureDate }}</p>
+      </div>
+      <div *ngIf="!cheapestFlight" class="no-results">
+        <p>No cheapest flight available for the selected route and month.</p>
+      </div>
+    </div> -->
+  

@@ -1,0 +1,69 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">SkyPort</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button class="btn btn-link" (click)="logOutAndNavigateHome()">Log Out</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-link" (click)="myBookings()">My Bookings</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="ticket-container" *ngIf="bookingDetails; else loading">
+    <div class="ticket-header">
+      <h2>Booking Confirmation</h2>
+      <p>Booking ID: {{ bookingDetails.booking.bookingId }}</p>
+    </div>
+  
+    <div class="ticket-body">
+      <div class="flight-info">
+        <h3>Flight Details</h3>
+        <p><strong>Flight Number:</strong> {{ bookingDetails.flight.flightNumber }}</p>
+        <p><strong>Flight Name:</strong> {{ bookingDetails.flight.flightName }}</p>
+        <p><strong>Source:</strong> {{ bookingDetails.flight.source }}</p>
+        <p><strong>Destination:</strong> {{ bookingDetails.flight.destination }}</p>
+        <p><strong>Departure:</strong> {{ bookingDetails.flight.departureDate }} at {{ bookingDetails.flight.departureTime }}</p>
+        <p><strong>Arrival:</strong> {{ bookingDetails.flight.arrivalDate }} at {{ bookingDetails.flight.arrivalTime }}</p>
+      </div>
+  
+      <div class="passenger-info">
+        <h3>Passenger Details</h3>
+        <ul>
+          <li *ngFor="let passenger of bookingDetails.passengers">
+            <p><strong>Name:</strong> {{ passenger.name }}</p>
+            <p><strong>Age:</strong> {{ passenger.age }}</p>
+            <p><strong>Gender:</strong> {{ passenger.gender }}</p>
+            <p><strong>Email:</strong> {{ passenger.email }}</p>
+            <p><strong>Phone:</strong> {{ passenger.phone }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="ticket-footer">
+      <h3>Total Price: INR {{ bookingDetails.booking.totalPrice }}.00</h3>
+      <button (click)="downloadPDF()" class="btn btn-primary mt-2">Download E-Ticket</button>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <p>Loading booking details...</p>
+  </ng-template>
+  
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+  

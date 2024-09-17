@@ -1,0 +1,70 @@
+/* Navbar Styling */
+.navbar {
+  background-color: #110b11; /* Dark background color */
+  border-bottom: 1px solid white; /* Subtle border at the bottom */
+  padding: 0.5rem 1rem; /* Padding for the navbar */
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between brand and nav items */
+  align-items: center; /* Center items vertically */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.navbar-brand .small-logo {
+  font-family: 'avenir next', helvetica;
+  font-weight: 100;
+  letter-spacing: -1px;
+  padding: 8px 10px;
+  border-radius: 2px;
+  border: 0.5px solid white;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-brand .small-logo:hover {
+  background-color: #FFC914;
+  border-color: black;
+  color: black;
+}
+
+.navbar-nav {
+  display: flex; /* Align items in a row */
+  margin: 0;
+  padding: 0;
+  margin-left: auto; /* Push the navbar items to the right */
+}
+
+.nav-item {
+  display: flex; /* Ensure flex properties are applied */
+  align-items: center; /* Vertically center the items */
+  margin-left: 10px; /* Space between buttons */
+}
+
+.nav-button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: white;
+  color: #110b11;
+}
+
+.nav-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Focus ring */
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffffff' stroke-width='2' d='M5 7h20M5 15h20M5 23h20'/%3E%3C/svg%3E");
+}

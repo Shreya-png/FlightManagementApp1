@@ -1,0 +1,55 @@
+<div class="register-container">
+  <h2>Register as a Passenger</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" placeholder="Enter your name" />
+      <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" placeholder="Enter your email" />
+      <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+        Please enter a valid email.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input id="phone" formControlName="phone" type="text" placeholder="Enter your phone number" />
+      <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched">
+        Phone number is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateOfBirth">Date of Birth</label>
+      <input id="dateOfBirth" formControlName="dateOfBirth" type="date" />
+      <div *ngIf="registerForm.get('dateOfBirth')?.invalid && registerForm.get('dateOfBirth')?.touched">
+        Date of birth is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" formControlName="username" type="text" placeholder="Choose a username" />
+      <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
+        Username is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password" placeholder="Enter your password" />
+      <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+        Password is required (minimum 8 characters).
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+</div>
